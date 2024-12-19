@@ -8,42 +8,114 @@
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
-      margin: 0 auto;
-      max-width: 800px;
-      padding: 20px;
+      margin: 0;
+      padding: 0;
       background-color: #f9f9f9;
     }
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 20px 0;
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    .blog-title {
+      margin: 0;
+      font-size: 2em;
+    }
+    .sidebar {
+      display: flex;
+      align-items: center;
+      background-color: #f1f1f1;
+      padding: 15px;
+      border-bottom: 1px solid #ddd;
+    }
+    .sidebar img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+    .sidebar div {
+      font-size: 0.9em;
+      color: #555;
+    }
+    .articles {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 10px;
     }
     .article {
-      margin-bottom: 40px;
       background: #fff;
+      margin-bottom: 20px;
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
+    .article img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
     .article h2 {
       color: #333;
+      margin-top: 10px;
+    }
+    .article p {
+      color: #555;
+      margin: 10px 0;
     }
   </style>
 </head>
 <body>
-  <h1>Dev Blog</h1>
 
-  <div class="article">
-    <h2>Titolo dell'Articolo</h2>
-    <img src="/sca-dev-blog/images/logo.png" alt="Logo del Progetto">
-    <p>
-      Questo è il testo dell'articolo. Qui puoi descrivere lo stato di avanzamento del tuo progetto, aggiungere dettagli tecnici e condividere i tuoi progressi.
-    </p>
-    <p>
-      Puoi anche aggiungere link utili, come questo: 
-      <a href="https://github.com" target="_blank">Visita GitHub</a>.
-    </p>
+  <header>
+    <h1 class="blog-title">Dev Blog</h1>
+  </header>
+
+  <div class="sidebar">
+    <img src="/sca-dev-blog/images/logo.png" alt="Logo del Blog">
+    <div>
+      <strong>Sottotitolo del Blog</strong><br>
+      Recapiti: <a href="mailto:info@blog.com">info@blog.com</a>
+    </div>
+  </div>
+
+  <div class="articles">
+    <!-- Articolo 1 -->
+    <div class="article">
+      <img src="/sca-dev-blog/images/article1.png" alt="Articolo 1">
+      <h2>Titolo Articolo 1</h2>
+      <p>
+        Primo paragrafo della descrizione dell'articolo. Puoi aggiungere qui i dettagli iniziali sul contenuto.
+      </p>
+      <p>
+        Secondo paragrafo della descrizione. Aggiungi ulteriori dettagli per incuriosire i lettori.
+      </p>
+    </div>
+
+    <!-- Articolo 2 -->
+    <div class="article">
+      <img src="/sca-dev-blog/images/article2.png" alt="Articolo 2">
+      <h2>Titolo Articolo 2</h2>
+      <p>
+        Primo paragrafo della descrizione dell'articolo. Illustra l'argomento trattato.
+      </p>
+      <p>
+        Secondo paragrafo con maggiori dettagli per dare una visione completa ai lettori.
+      </p>
+    </div>
+
+    <!-- Articolo 3 -->
+    <div class="article">
+      <img src="/sca-dev-blog/images/article3.png" alt="Articolo 3">
+      <h2>Titolo Articolo 3</h2>
+      <p>
+        Primo paragrafo introduttivo con un riassunto del contenuto dell'articolo.
+      </p>
+      <p>
+        Secondo paragrafo che approfondisce ulteriormente il tema trattato.
+      </p>
+    </div>
   </div>
 
 </body>
