@@ -42,3 +42,6 @@ logs/
 *.swp
 *~
 .DS_Store
+
+# local output
+output/

@@ -1,6 +1,6 @@
 AUTHOR = 'mrJungle'
 SITENAME = 'Super Competitive Arena dev BLOG'
-SITEURL = "http://localhost:8000"
+SITEURL = "https://binarya.github.io/sca-dev-blog/"
 
 PATH = "content"
 
@@ -61,5 +61,5 @@ EXTRA_PATH_METADATA = {
     'extra/favicon.ico': {'path': 'favicon.ico'},
 }
 
-OUTPUT_PATH = "docs/"
+OUTPUT_PATH = "/"
 
