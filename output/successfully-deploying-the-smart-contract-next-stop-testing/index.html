@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Successfully Deploying the Smart Contract – Next Stop: Testing - Super Competitive Arena dev BLOG</title>
+    <link rel="stylesheet" href="http://localhost:8000/theme/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><a href="http://localhost:8000/">Super Competitive Arena dev BLOG</a></h1>
+            <nav>
+                <a href="https://github.com/BINARYA/SKA-paper" class="github-link" target="_blank">
+                    <i class="fab fa-github"></i> Repository
+                </a>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+<article class="full-article">
+    <div class="article-header">
+        <h2>Successfully Deploying the Smart Contract – Next Stop: Testing</h2>
+        <div class="article-meta">
+            <span class="date"><i class="far fa-calendar-alt"></i> ven 21 febbraio 2025</span>
+            <span class="tags">
+                <i class="fas fa-tags"></i>
+                <a href="http://localhost:8000/tag/development.html" class="tag">development</a>
+                <a href="http://localhost:8000/tag/sca.html" class="tag">SCA</a>
+                <a href="http://localhost:8000/tag/smart-contract.html" class="tag">smart contract</a>
+                <a href="http://localhost:8000/tag/solidity.html" class="tag">Solidity</a>
+                <a href="http://localhost:8000/tag/testing.html" class="tag">testing</a>
+            </span>
+        </div>
+    </div>
+    
+    <div class="article-content">
+        <p>After countless iterations, debugging sessions, and conceptual rewrites, I’ve finally managed to <strong>successfully deploy the smart contract for Super Competitive Arena (SCA) on a local test chain</strong>. This marks a crucial milestone in the project, but the real challenge begins now: <strong>testing</strong>.</p>
+<h3>Preparing for Rigorous Testing</h3>
+<p>Now that we have a deployed contract, we need to ensure that every function behaves correctly under different conditions. The following categories define our test coverage:</p>
+<h4><strong>1. Initialization Tests</strong></h4>
+<ul>
+<li>✅ Deploy the core contract and its facets.</li>
+<li>✅ Verify the correct initialization of treasuries (creator, guilds, main tournament).</li>
+<li>✅ Ensure administrative roles (owner, oracle, guild leaders) are properly assigned.</li>
+</ul>
+<h4><strong>2. NFT Functionality Tests</strong></h4>
+<ul>
+<li>✅ Mint the creator NFT upon the first deployment.</li>
+<li>✅ Correct minting of guild NFTs.</li>
+<li>✅ Minting new Champion NFTs upon governance approval.</li>
+<li>✅ Ensuring proper association of NFTs with guilds.</li>
+<li>✅ Transfer functionality validation.</li>
+<li>✅ URI and metadata integrity tests.</li>
+<li>✅ Burn functionality (if applicable).</li>
+</ul>
+<h4><strong>3. Governance Proposal Tests</strong></h4>
+<ul>
+<li>✅ Creating proposals for game rule updates.</li>
+<li>✅ Proposing new NFT series.</li>
+<li>✅ Submitting a proposal for tournament initiation.</li>
+<li>✅ Modifying royalty distributions.</li>
+<li>✅ Simulating voting and quorum requirements.</li>
+<li>✅ Executing approved proposals.</li>
+<li>✅ Handling rejected proposals properly.</li>
+<li>✅ Weighting votes based on NFT types (Champions, Choices, Skins, etc.).</li>
+</ul>
+<h4><strong>4. Tournament Logic Tests</strong></h4>
+<ul>
+<li>✅ Creation and initiation of a guild tournament.</li>
+<li>✅ Multi-guild tournament setup and launch.</li>
+<li>✅ Execution of the main tournament.</li>
+<li>✅ Player registration with fee payments.</li>
+<li>✅ Refund process when a user exits before tournament start.</li>
+<li>✅ Handling of tournaments failing to meet participant thresholds.</li>
+<li>✅ Automatic closing and winner determination.</li>
+<li>✅ Prize pool distribution verification.</li>
+<li>✅ Tie scenario handling in the main tournament.</li>
+<li>✅ Regeneration of Anima points and fee distribution (30% to creator, 70% to guild treasury).</li>
+<li>✅ Ensuring the tournament mechanism prevents treasury depletion.</li>
+</ul>
+<h4><strong>5. Guild Treasury Tests</strong></h4>
+<ul>
+<li>✅ Proper accumulation of tournament fees and royalties.</li>
+<li>✅ Handling of treasury funds for winning guilds.</li>
+<li>✅ Locking treasuries of non-winning guilds.</li>
+<li>✅ Fair distribution of earnings among guild members.</li>
+<li>✅ Incentivizing the purchase of Champions from guilds with large treasuries.</li>
+<li>✅ Controlling Anima distribution when a guild's treasury exceeds set thresholds.</li>
+</ul>
+<h4><strong>6. Royalty Distribution Tests</strong></h4>
+<ul>
+<li>✅ Simulating NFT Champion purchases and royalty allocation.</li>
+<li>✅ Ensuring fair distribution between Oracle, Guilds, Champions, Choices, and Skins.</li>
+<li>✅ Governance-approved royalty modification.</li>
+<li>✅ Verifying 90% royalty redirection to the next tournament treasury and 10% to the creator.</li>
+<li>✅ Ensuring safeguards against unfair distribution.</li>
+</ul>
+<h4><strong>7. Security Tests</strong></h4>
+<ul>
+<li>✅ Ensuring only authorized roles can execute restricted functions.</li>
+<li>✅ Simulating unauthorized fund withdrawals.</li>
+<li>✅ Preventing duplicate tournament registrations.</li>
+<li>✅ Reentrancy attack protection for fund withdrawal functions.</li>
+<li>✅ Guarding against integer overflow/underflow vulnerabilities.</li>
+<li>✅ Preventing front-running attacks in tournaments and governance.</li>
+<li>✅ Sybil attack simulations to detect potential vote manipulation.</li>
+<li>✅ Comprehensive event logging for system transparency.</li>
+</ul>
+<h4><strong>8. Gas Optimization Tests</strong></h4>
+<ul>
+<li>✅ Measuring gas costs for minting NFTs.</li>
+<li>✅ Evaluating tournament entry fee costs.</li>
+<li>✅ Analyzing tournament performance under high registration loads.</li>
+<li>✅ Optimizing on-chain calls to minimize costs.</li>
+<li>✅ Determining the need for batching operations (e.g., prize distribution).</li>
+</ul>
+<h3>The Road Ahead</h3>
+<p>Testing will be a meticulous process, and I anticipate encountering <strong>unexpected bugs and edge cases</strong>. However, ensuring the contract is <strong>secure, efficient, and fully functional</strong> before deploying it on a real network is crucial.</p>
+<p>If you have insights, feedback, or want to contribute to the testing process, let’s connect—I truly appreciate any support in making SCA a <strong>robust and fair</strong> ecosystem!</p>
+<p>Stay tuned for the results of the first test runs!</p>
+    </div>
+        
+        <br>
+        <!-- 
+    <footer class="article-footer">
+
+        <div class="article-navigation">
+            
+        </div>
+    </footer>
+    -->
+</article>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; mrJungle </p>
+            <p>Powered by <a href="https://getpelican.com/">Pelican</a></p>
+        </div>
+    </footer>
+</body>
+</html>

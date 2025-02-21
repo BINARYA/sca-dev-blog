@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><a href="{{ SITEURL }}/">{{ SITENAME }}</a></h1>
+            <nav>
+                <a href="https://github.com/BINARYA/SKA-paper" class="github-link" target="_blank">
+                    <i class="fab fa-github"></i> Repository
+                </a>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; {{ AUTHOR }} {{ current_year }}</p>
+            <p>Powered by <a href="https://getpelican.com/">Pelican</a></p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title }} - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<article class="full-article">
+    <div class="article-header">
+        <h2>{{ article.title }}</h2>
+        <div class="article-meta">
+            <span class="date"><i class="far fa-calendar-alt"></i> {{ article.locale_date }}</span>
+            {% if article.tags %}
+            <span class="tags">
+                <i class="fas fa-tags"></i>
+                {% for tag in article.tags %}
+                <a href="{{ SITEURL }}/{{ tag.url }}" class="tag">{{ tag }}</a>
+                {% endfor %}
+            </span>
+            {% endif %}
+        </div>
+    </div>
+    
+    <div class="article-content">
+        {{ article.content }}
+    </div>
+        
+        <br>
+        <!-- 
+    <footer class="article-footer">
+        {% if article.modified %}
+        <p class="modified">Ultima modifica: {{ article.locale_modified }}</p>
+        {% endif %}
+
+        <div class="article-navigation">
+            {% if article.prev_article %}
+            <a href="{{ SITEURL }}/{{ article.prev_article.url }}" class="prev">
+                <i class="fas fa-arrow-left"></i> {{ article.prev_article.title }}
+            </a>
+            {% endif %}
+            
+            {% if article.next_article %}
+            <a href="{{ SITEURL }}/{{ article.next_article.url }}" class="next">
+                {{ article.next_article.title }} <i class="fas fa-arrow-right"></i>
+            </a>
+            {% endif %}
+        </div>
+    </footer>
+    -->
+</article>
+{% endblock %}
