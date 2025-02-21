@@ -40,7 +40,7 @@ a:hover {
 header {
     height: var(--header-height);
     width: 100%;
-    background-image: url('/theme/images/scahead_6.jpg');
+    background-image: url('/sca-dev-blog/theme/images/scahead_6.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
