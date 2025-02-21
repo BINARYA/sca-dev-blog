@@ -8,7 +8,7 @@ TIMEZONE = 'Europe/Rome'
 
 DEFAULT_LANG = 'en'
 
-ARTICLE_ORDER_BY = 'date'
+ARTICLE_ORDER_BY = 'reversed-date'
 
 
 MENUITEMS = (
