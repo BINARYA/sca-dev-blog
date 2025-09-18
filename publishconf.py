@@ -8,7 +8,7 @@ sys.path.append(os.curdir)
 from pelicanconf import *
 
 # If your site is available via HTTPS, make sure SITEURL begins with https://
-SITEURL = "https://binarya.github.io/sca-dev-blog/"
+SITEURL = "https://binarya.github.io/sca-dev-blog"
 RELATIVE_URLS = False
 
 FEED_ALL_ATOM = "feeds/all.atom.xml"

@@ -61,5 +61,5 @@ EXTRA_PATH_METADATA = {
     'extra/favicon.ico': {'path': 'favicon.ico'},
 }
 
-OUTPUT_PATH = ""
+OUTPUT_PATH = "docs/"
 

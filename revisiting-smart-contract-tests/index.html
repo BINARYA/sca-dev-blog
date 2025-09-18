@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Revisiting Smart Contract Tests - Super Competitive Arena dev BLOG</title>
+    <link rel="stylesheet" href="https://binarya.github.io/sca-dev-blog/theme/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><a href="https://binarya.github.io/sca-dev-blog/">Super Competitive Arena dev BLOG</a></h1>
+            <nav>
+                <a href="https://github.com/BINARYA/SKA-paper" class="github-link" target="_blank">
+                    <i class="fab fa-github"></i> Repository
+                </a>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+<article class="full-article">
+    <div class="article-header">
+        <h2>Revisiting Smart Contract Tests</h2>
+        <div class="article-meta">
+            <span class="date"><i class="far fa-calendar-alt"></i> gio 18 settembre 2025</span>
+            <span class="tags">
+                <i class="fas fa-tags"></i>
+                <a href="https://binarya.github.io/sca-dev-blog/tag/sviluppo.html" class="tag">sviluppo</a>
+                <a href="https://binarya.github.io/sca-dev-blog/tag/sca.html" class="tag">SCA</a>
+            </span>
+        </div>
+    </div>
+    
+    <div class="article-content">
+        <p>After a short (okay, maybe not <em>that</em> short) break filled with existential dread, refactoring headaches, and questionable amounts of coffee, I’ve officially <strong>resumed work on Super Competitive Arena (SCA)</strong>!</p>
+<p>And here’s the big news: I’ve <strong>reviewed the entire smart contract structure</strong> and even <strong>successfully passed the first batch of automated tests</strong>! 🎉</p>
+<h3>✅ Completed Test Suites</h3>
+<p>Here’s what’s already green-lit and battle-tested:</p>
+<ul>
+<li>
+<p><strong>00_bootstrap.diamond.spec</strong></p>
+</li>
+<li>
+<p>Diamond integrity via <code>diamondCut</code></p>
+</li>
+<li>No duplicate selectors</li>
+<li>
+<p>Basic Loupe functionality checks</p>
+</li>
+<li>
+<p><strong>01_loupe.spec</strong></p>
+</li>
+<li>
+<p>Facet list coherence: <code>facets()</code>, <code>facetAddresses()</code></p>
+</li>
+<li>
+<p>Selector mapping via <code>facetFunctionSelectors()</code></p>
+</li>
+<li>
+<p><strong>02_ownership.spec</strong></p>
+</li>
+<li>
+<p>Basic <code>owner()</code> validation</p>
+</li>
+<li>Ownership transfer and renounce paths</li>
+<li>
+<p>Access control guards functioning as expected</p>
+</li>
+<li>
+<p><strong>03_admin_init.spec</strong></p>
+</li>
+<li>
+<p>Vote weights, thresholds</p>
+</li>
+<li><code>baseURI</code> config</li>
+<li>
+<p>Executor address and config locking</p>
+</li>
+<li>
+<p><strong>04_weth.spec</strong></p>
+</li>
+<li>
+<p>Deploying MockWETH for tests</p>
+</li>
+<li><code>setWethAddress</code> configuration</li>
+<li>Balances and <code>getContractBalance()</code> verification</li>
+</ul>
+<h3>🔜 Upcoming Test Suites</h3>
+<p>Now that the basics are solid, it’s time to roll up the sleeves and move on to the next phase of testing:</p>
+<ul>
+<li>
+<p><strong>05_nftcore.spec</strong></p>
+</li>
+<li>
+<p>Minting/burning, URIs, NFT types and guild associations</p>
+</li>
+<li>
+<p>Role checks and security guards</p>
+</li>
+<li>
+<p><strong>06_royalty.spec</strong></p>
+</li>
+<li>
+<p>Default and per-token royalty logic</p>
+</li>
+<li>
+<p>Full ERC2981 compliance</p>
+</li>
+<li>
+<p><strong>07_marketplace.spec</strong></p>
+</li>
+<li>
+<p>NFT listing and purchasing</p>
+</li>
+<li>Fee handling in wETH</li>
+<li>
+<p>Payout logic and error handling (including revert paths)</p>
+</li>
+<li>
+<p><strong>08_proposals.spec</strong></p>
+</li>
+<li>
+<p>Proposal creation, voting mechanisms</p>
+</li>
+<li>
+<p>Thresholds, funding, and mint-gated logic</p>
+</li>
+<li>
+<p><strong>09_tournaments.spec</strong></p>
+</li>
+<li>
+<p>Main and funded tournaments</p>
+</li>
+<li>Creation, registration, start, results, refunds, and events</li>
+</ul>
+<h3>What’s Next?</h3>
+<p>More tests, more edge cases, more head banging against the keyboard. But the direction is clear, and the structure is finally starting to feel <strong>robust, modular, and testable</strong>.</p>
+<p>As always, if you’re following the development of SCA, or feel like chiming in with tips, critiques, or memes—I’m all ears. Let’s make this thing amazing!</p>
+    </div>
+        
+        <br>
+        <!-- 
+    <footer class="article-footer">
+
+        <div class="article-navigation">
+            
+        </div>
+    </footer>
+    -->
+</article>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; mrJungle </p>
+            <p>Powered by <a href="https://getpelican.com/">Pelican</a></p>
+        </div>
+    </footer>
+</body>
+</html>
