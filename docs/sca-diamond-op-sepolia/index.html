@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Super Competitive Arena — Diamond deployed on OP Sepolia 🎯 - Super Competitive Arena dev BLOG</title>
+    <link rel="stylesheet" href="https://binarya.github.io/sca-dev-blog/theme/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><a href="https://binarya.github.io/sca-dev-blog/">Super Competitive Arena dev BLOG</a></h1>
+            <nav>
+                <a href="https://github.com/BINARYA/SKA-paper" class="github-link" target="_blank">
+                    <i class="fab fa-github"></i> Repository
+                </a>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+<article class="full-article">
+    <div class="article-header">
+        <h2>Super Competitive Arena — Diamond deployed on OP Sepolia 🎯</h2>
+        <div class="article-meta">
+            <span class="date"><i class="far fa-calendar-alt"></i> dom 05 ottobre 2025</span>
+            <span class="tags">
+                <i class="fas fa-tags"></i>
+                <a href="https://binarya.github.io/sca-dev-blog/tag/ethereum.html" class="tag">Ethereum</a>
+                <a href="https://binarya.github.io/sca-dev-blog/tag/optimism.html" class="tag">Optimism</a>
+                <a href="https://binarya.github.io/sca-dev-blog/tag/solidity.html" class="tag">Solidity</a>
+                <a href="https://binarya.github.io/sca-dev-blog/tag/eip-2535.html" class="tag">EIP-2535</a>
+                <a href="https://binarya.github.io/sca-dev-blog/tag/diamond.html" class="tag">Diamond</a>
+                <a href="https://binarya.github.io/sca-dev-blog/tag/nft.html" class="tag">NFT</a>
+                <a href="https://binarya.github.io/sca-dev-blog/tag/testnet.html" class="tag">Testnet</a>
+            </span>
+        </div>
+    </div>
+    
+    <div class="article-content">
+        <h2>TL;DR</h2>
+<ul>
+<li>✅ <strong>Diamond (EIP-2535) deployed</strong> on <strong>OP Sepolia</strong>  </li>
+<li>
+<p>🔗 Contract address (OP Sepolia explorer):<br>
+<code>0x41EF22910D007D092Ce3e6e55d6241E9c2675165</code><br>
+<a href="https://testnet-explorer.optimism.io/address/0x41EF22910D007D092Ce3e6e55d6241E9c2675165">https://testnet-explorer.optimism.io/address/0x41EF22910D007D092Ce3e6e55d6241E9c2675165</a></p>
+</li>
+<li>
+<p>🖼️ <strong>First NFT previews</strong> are visible here:<br>
+<a href="https://testnet-explorer.optimism.io/token/0x41EF22910D007D092Ce3e6e55d6241E9c2675165">https://testnet-explorer.optimism.io/token/0x41EF22910D007D092Ce3e6e55d6241E9c2675165</a></p>
+</li>
+</ul>
+<h2>What’s in this release</h2>
+<p>This build brings the project to a modular, upgradable <strong>Diamond</strong> architecture:
+- <strong>Core facets</strong>: Ownership / Admin, DiamondCut &amp; Loupe
+- <strong>Game/NFT facets</strong>: NFT Core, Royalty, Proposals (funding + voting gated mints), Marketplace, Guild &amp; Soul mechanics, Main/Funding Tournaments
+- <strong>Accounting</strong>: royalties are routed to the <strong>contract</strong> by default, so the protocol can redistribute proceeds into the internal treasuries (“tesoretti”) according to game rules and governance.</p>
+<p>Everything runs on <strong>Optimism (OP Sepolia)</strong>. For value flows we use <strong>wETH</strong> on testnet; this keeps accounting predictable (ERC-20 semantics), simplifies marketplace operations, and makes treasuries easier to audit.</p>
+<h2>Highlights</h2>
+<ul>
+<li><strong>Diamond (EIP-2535)</strong>: clean facet separation and loupe visibility for explorers and tooling.  </li>
+<li><strong>Royalties (ERC-2981)</strong>: the contract itself is the default royalty receiver; funds are then split internally by the protocol logic.  </li>
+<li><strong>Proposals &amp; Funding</strong>: new collections/mints are gated by voting thresholds and donations, so creators are rewarded and the economy remains sustainable.  </li>
+<li><strong>Tournaments</strong>: main + guild tournaments with prize distribution; tie handling is built-in.  </li>
+<li><strong>Marketplace</strong>: list/buy with wETH and event-rich transparency.</li>
+</ul>
+<h2>Developer notes</h2>
+<ul>
+<li>Environment: <strong>Hardhat</strong>, OP Sepolia.  </li>
+<li>We’re standardizing on <strong>SafeERC20</strong> and <strong>pull-based payouts</strong> for safety and predictable UX.  </li>
+<li>Gas on L2 is friendly, but we still avoid unbounded loops; bulk/“cap” operations are either batched or handled lazily.</li>
+</ul>
+<h2>What’s next</h2>
+<ul>
+<li><strong>Gasless UX</strong>: introduce meta-transactions (ERC-2771 via a trusted forwarder) or evaluate ERC-4337 with a Bundler/Paymaster to sponsor gas for users.  </li>
+<li><strong>On-chain game rules</strong>: progressively migrate tournament/match logic and Soul Points updates fully on-chain for maximum transparency and third-party clients.  </li>
+<li><strong>Marketplace UI </strong>: list/buy flows on OP, approvals/Permit, and clear transaction states.  </li>
+<li><strong>Game UI (MVP)</strong>: tournament dashboards, join flows, leaderboards with tie handling, and champion detail pages (Soul, guild, recent matches).  </li>
+<li><strong>Playtesting on OP Sepolia</strong>: recruit early testers, provide a short guide and test funds, collect telemetry and feedback.  </li>
+<li><strong>Mainnet deploy on Optimism</strong>: finalize audits, set up multisig ownership, ship a canary release, and expand features behind safe flags.</li>
+</ul>
+    </div>
+        
+        <br>
+        <!-- 
+    <footer class="article-footer">
+
+        <div class="article-navigation">
+            
+        </div>
+    </footer>
+    -->
+</article>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; mrJungle </p>
+            <p>Powered by <a href="https://getpelican.com/">Pelican</a></p>
+        </div>
+    </footer>
+</body>
+</html>
