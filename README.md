@@ -1,6 +1,10 @@
 # Blog SCA - Dev Blog
 
+https://binarya.github.io/sca-dev-blog/
+
+
 This is the repository for the blog developed with [Pelican](https://blog.getpelican.com/), a Python-based static site generator.
+
 
 ## 📌 Requirements
 
